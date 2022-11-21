@@ -25,20 +25,20 @@ if (isset($_SESSION['id_user'])) { //$_SESSION['id_user'] > 0 &&
     <body>
         <br><br>
         <div class="container">
-            <a href="scanner.php?to=1">
-                <div class="card mb-3 text-bg-primary optionBC">
-                    <img src="./images/bodega.png" class="card-img-top icon-accion">
-                    <div class="card-body text-center">
-                        <h1 class="card-title">A Bodega</h1>
-                    </div>
-                </div>
-            </a>
-            <br><br>
             <a href="scanner.php?to=2">
                 <div class="card mb-3 text-bg-success optionBC">
                     <img src="./images/casillero.png" class="card-img-top icon-accion">
                     <div class="card-body text-center">
                         <h1 class="card-title">A Casillero</h1>
+                    </div>
+                </div>
+            </a>
+            <br><br>
+            <a href="scanner.php?to=1">
+                <div class="card mb-3 text-bg-primary optionBC">
+                    <img src="./images/bodega.png" class="card-img-top icon-accion">
+                    <div class="card-body text-center">
+                        <h1 class="card-title">A Bodega</h1>
                     </div>
                 </div>
             </a>

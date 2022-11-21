@@ -3,7 +3,7 @@
 session_start();
 
 if (isset($_SESSION['id_user'])) { //$_SESSION['id_user'] > 0 && 
-
+    error_reporting(0);
 
     include("./app/conexion.php");
 
@@ -42,6 +42,8 @@ if (isset($_SESSION['id_user'])) { //$_SESSION['id_user'] > 0 &&
     if (mysqli_num_rows($result) > 0) {
 
         $row = mysqli_fetch_assoc($result);
+    }else{
+        header('Location: scanner.php?to='.$to);
     }
 
     $select = "<option value='0'>Seleccionar usuario solicitante</option>";
