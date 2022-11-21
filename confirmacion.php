@@ -44,6 +44,24 @@ if (isset($_SESSION['id_user'])) { //$_SESSION['id_user'] > 0 &&
         $row = mysqli_fetch_assoc($result);
     }
 
+    $select = "<option value='0'>Seleccionar usuario solicitante</option>";
+    $query2 = "SELECT id, codigo, nombres, apellidos FROM tubagua.usuario 
+    WHERE rol_id = 4 AND active = 1
+    ORDER BY nombres ASC";
+
+    if (!$result2 = mysqli_query($con, $query2)) {
+        exit(mysqli_error($con));
+    }
+
+    if (mysqli_num_rows($result2) > 0) {
+
+        while($row2 = mysqli_fetch_assoc($result2)){
+
+            $select .= '<option value="'.$row2['id'].'">'.$row2['codigo'].' - '.$row2['nombres'].'</option>';
+
+        }
+    }
+
 ?>
 
     <!DOCTYPE html>
@@ -77,13 +95,17 @@ if (isset($_SESSION['id_user'])) { //$_SESSION['id_user'] > 0 &&
                         <strong>Categoria: </strong><?php echo $row['categoria'] ?> <br>
                         <strong>Sub-Categoria: </strong><?php echo $row['subcategoria'] ?> <br>
                         <strong>Sub-Sub-Categoria: </strong><?php echo $row['subsubcategoria'] ?> <br>
-                        <strong>Medida (Codigo Barras): </strong><?php echo $row['medida'] ?> <br>
+                        <strong>Cantidad Caja: </strong><?php echo $row['medida'] ?> <br>
                     </h5>
                 </div>
                 <div class="card-footer text-muted">
                     <?php echo date('m-d-Y') ?>
                 </div>
             </div>
+            <br>
+            <select class="form-select" id="selectSolicitud" aria-label="Default select example">
+                <?php echo $select ?>
+            </select>
             <br>
             <div class="d-grid gap-2">
                 <button class="btn btn-success btn-lg" type="button" onclick="registrar(<?php echo $row['articuloId'] ?>,<?php echo $to ?>,<?php echo $row['medida']?>)">
