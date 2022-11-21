@@ -1,0 +1,78 @@
+
+ @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;700&display=swap');
+html, body { 
+    height:100%; 
+    margin:0;
+    padding:0;
+    font-family: Arial, Helvetica, sans-serif
+  }
+  
+  .contenedor {
+    display:flex;
+    flex-direction: column;
+    min-height:100%;
+  }
+  
+  .contenedor > div {
+    flex:1;
+    display:flex;
+  }
+
+  .contenedor > .select {
+    flex: 0.2;
+    font-size: 35px;
+    align-items: center;
+    margin: auto;
+  }
+  
+  .fila0 { background:#048ABF }
+  .fila1 { background:#FF343B }
+
+
+  .icon-accion{
+    align-items: center;
+    width: 50%;
+    height: 50%;
+    margin: auto;
+  }
+
+  a:link{
+    text-decoration: none;
+  }
+
+  a:visited{
+    text-decoration: none;
+  }
+
+  a:hover{
+    text-decoration: none;
+  }
+
+  a:active{
+    text-decoration: none;
+  }
+
+  .optionBC:hover{
+    opacity: 0.8;
+  }
+
+  #contenedor video{
+    max-width: 100%;
+    width: 100%;
+  }
+  #contenedor{
+    max-width: 100%;
+    position:relative;
+  }
+  canvas{
+    max-width: 100%;
+  }
+  canvas.drawingBuffer{
+    position:absolute;
+    top:0;
+    left:0;
+  }
+
+  .icon-back{
+    width: 25%;
+  }
